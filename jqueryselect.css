@@ -1,0 +1,167 @@
+.TC-jquery-select{
+  position: relative;
+  color:#000;
+}
+.TC-jquery-select *{
+  margin:0;
+  padding: 0;
+}
+.TC-jquery-select ul,.TC-jquery-select li{
+  list-style: none;
+}
+.TC-jquery-select a{
+  text-decoration:none;
+  color:#000;
+}
+
+.TC-jquery-select .tcSelectShower{
+  width: 100%;
+  height:100%;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+  padding: 0 5px;
+}
+
+.TC-jquery-select .tcSelectShower span{
+  margin-right: 8px;
+  /*border:1px solid #efefef;*/
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.TC-jquery-select .tcSelectPanel{
+  position: absolute;
+  top:100%;
+  left:0;
+  width: 100%;
+  border: 1px solid #eee;
+  border-top:0;
+  box-sizing: border-box;
+  display: none;
+  z-index: 2;
+  background: #fff;
+}
+
+.TC-jquery-select .tcSelectFilter{
+  margin:5px 8px;
+  border:1px solid #eee;
+  position: relative;
+}
+
+.TC-jquery-select .tcSelectFilter .tcSelectFilterInput{
+  display: block;
+  width: 100%;
+  height: 24px;
+  line-height: 24px;
+  border:0;
+  padding: 3px 5px;
+  padding-right:25px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.TC-jquery-select .tcSelectFilter .clearInput{
+  position: absolute;
+  right: 0;
+  top:0;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  cursor: pointer;
+  display: none;
+}
+
+.TC-jquery-select .tcSelectList{
+  margin: 8px;
+  font-size: 14px;
+}
+
+.TC-jquery-select .tcSelectList ul{
+  padding-left: 24px;
+  background-image: url(pic.png);
+  background-repeat: repeat-y;
+  background-position: -72px 0;
+}
+
+.TC-jquery-select ul>li:last-child>ul{
+  background: none;
+}
+
+.TC-jquery-select .tcSelectItem{
+  cursor: pointer;
+}
+
+.TC-jquery-select .tcSelectItem>ul{
+  display: none;
+}
+
+.TC-jquery-select .tcSelectItem:hover>span{
+  color: rgb(16,163,255);
+}
+
+.TC-jquery-select .tcSelectItem .treeLine{
+  float: left;
+  width: 24px;
+  height: 24px;
+  background: url(pic.png) center center no-repeat;
+  background-position: 0 -24px;
+}
+
+.TC-jquery-select .tcSelectItem .treeLine.hasChildren{
+  background-position: -24px -24px;
+  cursor: pointer;
+}
+
+.TC-jquery-select .tcSelectItem .treeLine.open{
+  background-position: -48px -24px;
+  cursor: pointer;
+}
+
+.TC-jquery-select ul>li:last-child>.treeLine{
+  background-position: 0 0;
+}
+
+.TC-jquery-select ul>li:last-child>.treeLine.hasChildren{
+  background-position: -24px 0;
+}
+
+.TC-jquery-select ul>li:last-child>.treeLine.open{
+  background-position: -48px 0;
+}
+
+.TC-jquery-select .tcSelectItem .checkBox{
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin: 4px 5px 4px 0;
+  background: url(pic.png) center center no-repeat;
+  background-position: -48px -48px;
+  cursor: pointer;
+}
+
+.TC-jquery-select .tcSelectItem>.checkBox.checked{
+  background-position: 0 -48px;
+}
+
+.TC-jquery-select .tcSelectItem>.checkBox.halfChecked{
+  background-position: -24px -48px;
+}
+
+.TC-jquery-select .tcSelectItem span{
+  line-height: 24px;
+  cursor: pointer;
+  -webkit-user-select:none;
+}
+
+.TC-jquery-select .noData{
+  line-height: 24px;
+  text-align: center;
+  font-size: 12px;
+}

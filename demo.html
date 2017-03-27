@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>下拉框</title>
+    <link rel="stylesheet" href="jqueryselect.css">
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+
+      .test{
+        width:200px;
+        height:30px;
+        margin-bottom:20px;
+        margin-left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+      <!-- <div id="tree" class="test"></div>
+      <div id="list" class="test"></div> -->
+
+      <div id="treeMulti" class="test"></div>
+      <div id="listMulti" class="test"></div>
+
+      <script src="jquery.min.js"></script>
+      <script src="jqueryselect.js"></script>
+      <script>
+      var testData = [
+        {
+          id:1,
+          name:"test1",
+          children:[
+            {
+              id:11,
+              name:"test11"
+            },
+            {
+              id:12,
+              name:"test12"
+            }
+          ]
+        },
+        {
+          id:2,
+          name:"test2",
+          children:[
+            {
+              id:21,
+              name:"test21"
+            },
+            {
+              id:22,
+              name:"test22",
+              children:[
+                {
+                  id:221,
+                  name:"test221",
+                  isChecked:true
+                },
+                {
+                  id:222,
+                  name:"test222",
+
+                }
+              ]
+            }
+          ]
+        },{
+          id:3,
+          name:"test3",
+          children:[{
+            id:31,
+            name:"test31"
+          },
+          {
+            id:32,
+            name:"test32"
+          },
+          {
+            id:33,
+            name:"test33"
+          }]
+        }
+      ];
+      var test = null;
+          $(function(){
+            test = $("#treeMulti").jquerySelect({
+              "multi":true,      //是否多选
+              "tree":true,       //是否树状
+              "search":true,      //是否需要搜索框
+              "placeholder":"test",   //placeholder
+              "dataJson":testData,      //非异步的数据源
+              "checkFn":function(idList){
+                console.log(idList);
+              },     //点击复选框回调
+              "hideFn":function(idList){
+                console.log(idList);
+              }       //选择完成隐藏面板时回调
+            });
+
+            $("#listMulti").jquerySelect({
+              "multi":true,      //是否多选
+              "tree":false,       //是否树状
+              "search":true,      //是否需要搜索框
+              "placeholder":"test",   //placeholder
+              "dataJson":testData,      //非异步的数据源
+              "checkFn":function(idList){
+                console.log(idList);
+              },     //点击复选框回调
+              "hideFn":function(idList){
+                console.log(idList);
+              }       //选择完成隐藏面板时回调
+            });
+          });
+      </script>
+  </body>
+</html>
